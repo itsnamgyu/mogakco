@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="login-container" class="container" style="width: 356px; height: 100%; display: table; z-index: 1;">
+    <div style="display: table-cell; vertical-align: middle;">
+        <h1 class="main-title"><b>모각코</b></h1>
+        <p class="main-copy">코딩하기 좋은 공간을 찾아<br />모여서 각자 코딩하는 곳</p>
+        <div style="margin-top: 7%;">
+            <img class="google-login" v-on:click="login" src="{% static 'imgs/google-login.png' %}"/>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#login-container",
+        created: function() {
+            firebase.auth().onAuthStateChanged(user=> {
+                if(user)
+                    location.replace("{% url 'search' %}")
+            });
+        },
+        methods: {
+            login: function(event) {
+                var provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithPopup(provider).then(function(result) {
+                    var token = result.credential.accessToken;
+                    var user = result.user;
+                }).catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    var email = error.mail;
+                    var credential = error.credential;
+					alert(errorCode + " : " + errorMessage);
+                });
+            },
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div style="width: 100%; height: 100%; display: table;" align="center">
+    <div style="display: table-cell; vertical-align: middle;">
+        <div class="card col-lg-6 col-md-4" style="padding: 3%; border-radius: 0;">
+        <div style="border-radius: 0; display: inline;">
+            <input class="col-lg-9 col-md-4" style="font-size: 3em; font-weight: 700; display: inline-block; padding: 0; margin: 0; border: 0;" type="text" />
+            <div class="col-lg-2" style="font-size: 3em; font-weight: 700; color: rgb(255, 139, 0); display: inline-block; padding: 0; margin: 0;">검색</div>
+        </div>
+    </div>
+</div>
+<script>
+    firebase.auth().onAuthStateChanged(user=>{
+        if(!user)
+            location.replace("{% url 'main' %}");
+    });
+</script>
+{% endblock %}
