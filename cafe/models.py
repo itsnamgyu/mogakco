@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class CafeInfo(models.Model):
     name = models.CharField(max_length=50)
-    address = model.CharField(max_length=100)
+    address = models.CharField(max_length=100)
     comment = models.CharField(max_length=300)
     power = models.IntegerField()
     americano = models.IntegerField()
