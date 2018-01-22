@@ -1,5 +1,5 @@
 """
-WSGI config for nfest project.
+WSGI config for mogakco project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,13 +8,9 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 """
 
 import os
-import sys
 
 from django.core.wsgi import get_wsgi_application
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(BASE_DIR)
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "nfest.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mogakco.settings")
 
 application = get_wsgi_application()
