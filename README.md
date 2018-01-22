@@ -3,7 +3,13 @@ A service to help hip-happenin' developers find cafes with good wifi and power p
 
 ![DONT LIE TO ME](https://media1.tenor.com/images/98753515461c9cec721477bca6e7131d/tenor.gif?itemid=7875134)
 
-# Project Structure
+# Project Info
+
+## Deployment
+
+Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/django-two) for a full Ubuntu AWS setup walkthrough.
+
+## Project Structure
 
 ~~Will employ [this structure](https://www.revsys.com/blog/2014/nov/21/recommended-django-project-layout/)...~~~
 
@@ -13,10 +19,13 @@ Lets try to just make apps based on the grouping of *models*
 
 Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/18270898/django-best-practice-for-splitting-up-project-into-apps)
 
-# Deployment
+## Coding Convensions
 
-Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/django-two) for a full Ubuntu AWS setup walkthrough.
+Follow the pep8 coding guide (no-brainer for Python). Try to check your code with flake8 before committing. It's included in requirements.txt! Just do
 
+```
+flake8 ho.py
+```
 
 # Behind Story
 
