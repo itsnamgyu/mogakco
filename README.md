@@ -1,5 +1,5 @@
 # Mogak Co
-A service to help hip-happenin' developers help find cafes with good wifi and power plugs!
+A service to help hip-happenin' developers find cafes with good wifi and power plugs!
 
 ![DONT LIE TO ME](https://media1.tenor.com/images/98753515461c9cec721477bca6e7131d/tenor.gif?itemid=7875134)
 
