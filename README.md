@@ -5,8 +5,13 @@ A service to help hip-happenin' developers find cafes with good wifi and power p
 
 # Project Structure
 
-Will employ [this structure](https://www.revsys.com/blog/2014/nov/21/recommended-django-project-layout/)...
+~~Will employ [this structure](https://www.revsys.com/blog/2014/nov/21/recommended-django-project-layout/)...~~~
 
+Too [complicated](https://www.youtube.com/watch?v=5NPBIwQyPWE) and doesn't really tell you how to divide the project into apps.
+
+Lets try to just make apps based on the grouping of *models*
+
+Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/18270898/django-best-practice-for-splitting-up-project-into-apps)
 
 # Deployment
 
