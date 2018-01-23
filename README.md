@@ -15,7 +15,7 @@ Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/dja
 
 Too [complicated](https://www.youtube.com/watch?v=5NPBIwQyPWE) and doesn't really tell you how to divide the project into apps.
 
-Lets try to just make apps based on the grouping of *models*
+Lets try to use common sense and group things into apps based on the models they interact with. I.e. everything about showing, editing, cafes should be grouped into the `cafe` app.
 
 Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/18270898/django-best-practice-for-splitting-up-project-into-apps)
 
