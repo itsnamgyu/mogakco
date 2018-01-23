@@ -26,3 +26,6 @@ class Cafe(models.Model):
     close_weekday = models.IntegerField()
     close_sat = models.IntegerField()
     close_sun = models.IntegerField()
+
+    def __str__(self):
+        return self.name
