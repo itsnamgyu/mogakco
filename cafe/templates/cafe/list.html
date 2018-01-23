@@ -2,39 +2,30 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'cafe/css/list.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'cafe/css/list.css' %}"/>
 {% endblock %}
 
 {% block content %}
-{% for cafe in cafes %}
-<h1>{{ cafe.name }}</h1>
-<br>
-<ul>
-	<li>{{ cafe.address }}</li>
-	<li>Americanos cost {{ cafe.americano }}KRW</li>
-
-	{% if cafe.plug == 0 %}
-	<li>No power plugs :(</li>
-	{% endif %}
-	{% if cafe.plug == 1 %}
-	<li>There are a few power plugs</li>
-	{% endif %}
-	{% if cafe.plug == 2 %}
-	<li>Much power plugs!</li>
-	{% endif %}
-
-	{% if cafe.wifi == 0 %}
-	<li>Bad or no wifi here :(</li>
-	{% endif %}
-	{% if cafe.wifi == 1 %}
-	<li>The wifi is "okay"</li>
-	{% endif %}
-	{% if cafe.wifi == 2 %}
-	<li>Much wifi!</li>
-	{% endif %}
-</ul>
-<br>
-<p><pre>{{ cafe.comment }}</pre></p>
-<br>
-{% endfor %}
+    {% for cafe in cafes %}
+        <div class="card page-width">
+            <div class="card-content">
+                <h2 class="temp-title">{{ cafe.name }}</h2>
+                <p class="info"><span class="label">Address</span>{{ cafe.address }}</p>
+                <p class="info"><span class="label">Americano</span>{{ cafe.americano }}KRW</p>
+                <p class="info"><span class="label">Electric Plugs</span>{{ cafe.plug_string }}</p>
+                <p class="info"><span class="label">Wifi</span>{{ cafe.wifi_string }}</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="ho.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="ho.js"></script>
+</head>
+<body>
+<div class="card big">Do This!</div>
+<div class="card big">Do That!</div>
+</body>
+

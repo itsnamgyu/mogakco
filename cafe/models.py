@@ -30,3 +30,19 @@ class Cafe(models.Model):
 
     def __str__(self):
         return self.name
+
+    def plug_string(self):
+        if self.plug == 0:
+            return "No plugs :("
+        if self.plug == 1:
+            return "Some plugs"
+        if self.plug == 2:
+            return "Lot's of plugs!"
+
+    def wifi_string(self):
+        if self.wifi == 0:
+            return "Bad wifi"
+        if self.wifi == 1:
+            return "Okay wifi"
+        if self.wifi == 2:
+            return "Good wifi"
