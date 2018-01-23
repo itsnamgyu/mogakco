@@ -1,0 +1,36 @@
+{% extends "global.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'cafe/list.css' %}"/>
+{% endblock %}
+
+{% block content %}
+{% for cafe in cafes %}
+<h1>{{ cafe.name }}</h1>
+<ul>
+	<li>{{ cafe.address }}</li>
+	<li>Americanos cost {{ cafe.americano }}KRW</li>
+
+	{% if cafe.plug == 0 %}
+	<li>No power plugs :(</li>
+	{% endif %}
+	{% if cafe.plug == 1 %}
+	<li>There are a few power plugs</li>
+	{% endif %}
+	{% if cafe.plug == 2 %}
+	<li>Much power plugs!</li>
+	{% endif %}
+
+	{% if cafe.wifi == 0 %}
+	<li>Bad or no wifi here :(</li>
+	{% endif %}
+	{% if cafe.wifi == 1 %}
+	<li>The wifi is "okay"</li>
+	{% endif %}
+	{% if cafe.wifi == 2 %}
+	<li>Much wifi!</li>
+	{% endif %}
+</ul>
+{% endfor %}
+{% endblock %}
