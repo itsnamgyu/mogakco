@@ -8,6 +8,11 @@ function validate_form() {
         return false;
     }
 
+	if (form["name"].value.length > 20) {
+		alert("잡았다 요놈!");
+		return false;
+	}
+
     if (form["address"].value === "") {
         alert("Address cannot be blank!");
         return false;
