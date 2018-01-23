@@ -6,4 +6,5 @@ app_name = 'cafe'
 urlpatterns = [
     path('index', views.list, name='index'),
     path('create', views.create, name='create'),
+    path('submit', views.submit, name='submit'),
 ]

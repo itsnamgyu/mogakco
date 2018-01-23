@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<h1>Create a new cafe!</h1>
+<h1>새로운 카페를 등록하세요!</h1>
+<form action="{% url 'cafe:submit' %}" method="POST">
+	{% csrf_token %}
+	<input type="text" name="name" id="name"/>
+	<label for="name">카페 이름</label>
+	<input id="submit_button" type="submit" value="등록하기" />
+</form>
 {% endblock %}
