@@ -1,11 +1,26 @@
+from functools import reduce
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.db.models import Q
 from cafe.models import Cafe
 
 
 def list(request):
-    cafes = Cafe.objects.all()
+    if 'search_string' in request.GET:
+        search_string = request.GET['search_string']
+        if search_string == "":
+            cafes = Cafe.objects.all()
+        else:
+            search_strings = search_string.replace("역", " ").split()
+            name_query = reduce(lambda q, f: q | Q(name__icontains=f), search_strings, Q())
+            address_query = reduce(lambda q, f: q | Q(address__icontains=f), search_strings, Q())
+            cafes = Cafe.objects.filter(name_query | address_query)
+
+    else:
+        cafes = Cafe.objects.all()
+
     return render(request, "cafe/list.html", {'cafes': cafes})
 
 

@@ -6,6 +6,12 @@
 {% endblock %}
 
 {% block content %}
+    <div class="card search">
+        <form action="{% url 'cafe:index' %}" name="search" method="GET">
+            <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..."/>
+            <input class="search-submit" type="submit" value="검색"/>
+        </form>
+    </div>
     {% for cafe in cafes %}
         <div class="card page-width">
             <div class="card-content">

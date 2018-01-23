@@ -21,3 +21,34 @@ h1 {
     font-weight: 700;
     margin-bottom: 32px;
 }
+
+.card.search {
+    margin-bottom: 32px;
+	width: 840px;
+	text-align: left;
+}
+
+.search-input {
+    overflow: hidden;
+	border: none;
+    color: #000;
+	font-size: 28px;
+	font-weight: 700;
+	margin: 48px 0 48px 56px;
+	display: inline;
+}
+
+.search-submit {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	float: right;
+	color: #FF8B00;
+	font-size: 28px;
+	font-weight: 700;
+	margin: 48px 56px 48px 0;
+	display: inline;
+}
+
+search-submit:hover {
+	cursor: pointer;
+}
