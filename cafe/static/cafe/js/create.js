@@ -18,6 +18,11 @@ function validate_form() {
         return false;
     }
 
+	if (form["address"].value.length > 20) {
+		alert("또 잡았다 요놈!");
+		return false;
+	}
+
     if (!(0 < americano && americano < 20000)) {
         alert("Americano price could not be " + americano);
         return false;
