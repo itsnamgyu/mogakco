@@ -19,9 +19,10 @@ def list(request):
             cafes = Cafe.objects.filter(name_query | address_query)
 
     else:
+        search_string = ""
         cafes = Cafe.objects.all()
 
-    return render(request, "cafe/list.html", {'cafes': cafes})
+    return render(request, "cafe/list.html", {'cafes': cafes, 'search_string': search_string})
 
 
 def create(request):
