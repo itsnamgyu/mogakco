@@ -14,6 +14,7 @@ WIFI_STATES = (
 class Cafe(models.Model):
     name = models.CharField(max_length=256)
     address = models.CharField(max_length=256)
+    comment = models.TextField(default="")
     plug = models.IntegerField(choices=PLUG_STATES)
     wifi = models.IntegerField(choices=WIFI_STATES)
     # Price of americano
