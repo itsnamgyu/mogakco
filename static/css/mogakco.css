@@ -27,6 +27,25 @@ body {
 	padding: 48px 56px;
 }
 
+.card-button {
+	text-align: center;
+	display: block;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	color: #FF8B00;
+	font-size: 24px;
+	font-weight: 700;
+	width: 100%;
+	padding: 32px 0px;
+    text-decoration: none;
+}
+
+.card-button:hover {
+	cursor: pointer;
+	background-color: #FF8B00;
+	color: #fff;
+}
+
 .card-shadow {
 	z-index: -10;
 	position: absolute;
