@@ -53,6 +53,21 @@ class Migration(migrations.Migration):
                 ('wifi', models.IntegerField(choices=[(0, 'Bad'), (1, 'Fine'), (2, 'Good')])),
             ],
         ),
+        migrations.AddField(
+            model_name='review',
+            name='cafe',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
+        ),
+        migrations.AddField(
+            model_name='prices',
+            name='cafe',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
+        ),
+        migrations.AddField(
+            model_name='hours',
+            name='cafe',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
+        ),
         migrations.RunPython(migrate_reviews),
         migrations.RunPython(migrate_prices),
         migrations.RemoveField(
@@ -90,20 +105,5 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='cafe',
             name='wifi',
-        ),
-        migrations.AddField(
-            model_name='review',
-            name='cafe',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
-        ),
-        migrations.AddField(
-            model_name='prices',
-            name='cafe',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
-        ),
-        migrations.AddField(
-            model_name='hours',
-            name='cafe',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cafe.Cafe'),
         ),
     ]
