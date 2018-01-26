@@ -14,22 +14,15 @@ WIFI_STATES = (
 class Cafe(models.Model):
     name = models.CharField(max_length=256)
     address = models.CharField(max_length=256)
-    comment = models.TextField(default="")
-    plug = models.IntegerField(choices=PLUG_STATES)
-    wifi = models.IntegerField(choices=WIFI_STATES)
-    # Price of americano
-    americano = models.IntegerField()
-    # In minutes
-    open_weekday = models.IntegerField()
-    open_sat = models.IntegerField()
-    open_sun = models.IntegerField()
-    # In minutes
-    close_weekday = models.IntegerField()
-    close_sat = models.IntegerField()
-    close_sun = models.IntegerField()
-
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    cafe = models.ForeignKey(Cafe, on_delete=models.CASCADE)
+    comment = models.TextField(null=True)
+    plug = models.IntegerField(choices=PLUG_STATES)
+    wifi = models.IntegerField(choices=WIFI_STATES)
 
     def plug_string(self):
         if self.plug == 0:
@@ -46,3 +39,20 @@ class Cafe(models.Model):
             return "Okay wifi"
         if self.wifi == 2:
             return "Good wifi"
+
+
+class Hours(models.Model):
+    cafe = models.ForeignKey(Cafe, on_delete=models.CASCADE)
+    # In minutes
+    open_weekday = models.IntegerField()
+    open_sat = models.IntegerField()
+    open_sun = models.IntegerField()
+    # In minutes
+    close_weekday = models.IntegerField()
+    close_sat = models.IntegerField()
+    close_sun = models.IntegerField()
+
+
+class Prices(models.Model):
+    cafe = models.ForeignKey(Cafe, on_delete=models.CASCADE)
+    americano = models.IntegerField()
