@@ -17,10 +17,20 @@
             <div class="card-content">
                 <h2 class="temp-title">{{ cafe.name }}</h2>
                 <p class="info"><span class="label">주소</span>{{ cafe.address }}</p>
-                <p class="info"><span class="label">아메리카노 가격</span>{{ cafe.americano }}KRW</p>
-                <p class="info"><span class="label">전기 코드</span>{{ cafe.plug_string }}</p>
-                <p class="info"><span class="label">와이파이</span>{{ cafe.wifi_string }}</p>
+				{% if cafe.prices_set.first %}	
+                <p class="info"><span class="label">아메리카노 가격</span>{{ cafe.prices_set.first.americano }}KRW</p>
+				{% endif %}
+				{% if cafe.review_set.first %}	
+                <p class="info"><span class="label">전기 코드</span>{{ cafe.review_set.first.plug_string }}</p>
+                <p class="info"><span class="label">와이파이</span>{{ cafe.review_set.first.wifi_string }}</p>
+				{% endif %}
             </div>
+			{% if not cafe.prices_set.first %}	
+			<a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
+			{% endif %}
+			{% if not cafe.review_set.first %}
+			<a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
+			{% endif %}
         </div>
     {% endfor %}
     <div class="card page-width">

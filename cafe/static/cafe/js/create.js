@@ -1,5 +1,4 @@
 function validate_form() {
-    console.log("HOHOH")
     var form = document.forms["new_cafe"];
     var americano = parseInt(form["americano"].value);
 
@@ -22,21 +21,6 @@ function validate_form() {
 		alert("또 잡았다 요놈!");
 		return false;
 	}
-
-    if (!(0 < americano && americano < 20000)) {
-        alert("Americano price could not be " + americano);
-        return false;
-    }
-
-    if (form["plug"].value === "") {
-        alert("Select plug status!");
-        return false;
-    }
-
-    if (form["wifi"].value === "") {
-        alert("Select plug status!");
-        return false;
-    }
 
     return true;
 }

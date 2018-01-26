@@ -14,8 +14,10 @@ def list(request):
             cafes = Cafe.objects.all()
         else:
             search_strings = search_string.replace("역", " ").split()
-            name_query = reduce(lambda q, f: q | Q(name__icontains=f), search_strings, Q())
-            address_query = reduce(lambda q, f: q | Q(address__icontains=f), search_strings, Q())
+            name_query = reduce(lambda q, f: q | Q(name__icontains=f), 
+                                search_strings, Q())
+            address_query = reduce(lambda q, f: q | Q(address__icontains=f),
+                                   search_strings, Q())
             cafes = Cafe.objects.filter(name_query | address_query)
 
     else:
@@ -25,27 +27,58 @@ def list(request):
     return render(request, "cafe/list.html", {'cafes': cafes, 'search_string': search_string})
 
 
+
 def create(request):
     return render(request, "cafe/create.html")
 
 
-def submit(request):
+def add_review(request, cafe_pk):
+    cafe = Cafe.objects.get(pk=cafe_pk)
+    return render(request, "cafe/add_review.html", {'cafe': cafe})
+
+
+def add_prices(request, cafe_pk):
+    cafe = Cafe.objects.get(pk=cafe_pk)
+    return render(request, "cafe/add_prices.html", {'cafe': cafe})
+
+
+def submit_cafe(request):
     cafe = Cafe()
     try:
         cafe.name = request.POST['name']
         cafe.address = request.POST['address']
-        cafe.americano = request.POST['americano']
-        cafe.plug = request.POST['plug']
-        cafe.wifi = request.POST['wifi']
     except KeyError:
         print("Received an invalid cafe create form")
     else:
-        cafe.open_sat = 0
-        cafe.open_sun = 0
-        cafe.open_weekday = 0
-        cafe.close_sat = 0
-        cafe.close_sun = 0
-        cafe.close_weekday = 0
+        cafe.save()
+
+    return HttpResponseRedirect(reverse('cafe:index'))
+
+
+def submit_review(request, cafe_pk):
+    try:
+        comment_string = request.POST['comment']
+        comment = comment_string if comment_string else None
+
+        cafe = Cafe.objects.get(pk=cafe_pk)
+        cafe.review_set.create(
+                plug=request.POST['plug'], wifi=request.POST['wifi'],
+                comment=None)
+    except (Cafe.DoesNotExist, KeyError):
+        print("Received an invalid cafe create form")
+    else:
+        cafe.save()
+
+    return HttpResponseRedirect(reverse('cafe:index'))
+
+
+def submit_prices(request, cafe_pk):
+    try:
+        cafe = Cafe.objects.get(pk=cafe_pk)
+        cafe.prices_set.create(americano=request.POST['americano'])
+    except (Cafe.DoesNotExist, KeyError):
+        print("Received an invalid cafe create form")
+    else:
         cafe.save()
 
     return HttpResponseRedirect(reverse('cafe:index'))

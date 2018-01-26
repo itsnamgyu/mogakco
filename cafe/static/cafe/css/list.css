@@ -52,3 +52,12 @@ h1 {
 search-submit:hover {
 	cursor: pointer;
 }
+
+button.add-info {
+	color: #FF8B00;
+	text-align: right;
+	margin-top: 32px;
+	font-size: 28px;
+	font-weight: 700;
+	display: inline;
+}
