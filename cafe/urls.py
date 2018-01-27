@@ -4,9 +4,9 @@ from . import views
 app_name = 'cafe'
 
 urlpatterns = [
-    path('index', views.list, name='index'),
-    path('create', views.create, name='create'),
-    path('submit_cafe', views.submit_cafe, name='submit_cafe'),
+    path('cafe/index', views.list, name='index'),
+    path('cafe/create', views.create, name='create'),
+    path('cafe/submit_cafe', views.submit_cafe, name='submit_cafe'),
     path('cafe/<int:cafe_pk>/add_review', views.add_review, name='add_review'),
     path('cafe/<int:cafe_pk>/add_prices', views.add_prices, name='add_prices'),
     path('cafe/<int:cafe_pk>/submit_review', views.submit_review, name='submit_review'),
