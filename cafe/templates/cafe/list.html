@@ -8,7 +8,11 @@
 {% block content %}
     <div class="card search">
         <form action="{% url 'cafe:index' %}" name="search" method="GET">
-            <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..." value="{{ search_string }}"/>
+            {% if search_string %}
+                <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..." value="{{ search_string }}" />
+            {% else %}
+                <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..." autofocus/>
+            {% endif %}
             <input class="search-submit" type="submit" value="검색"/>
         </form>
     </div>
@@ -24,13 +28,17 @@
                 <p class="info"><span class="label">전기 코드</span>{{ cafe.review_set.first.plug_string }}</p>
                 <p class="info"><span class="label">와이파이</span>{{ cafe.review_set.first.wifi_string }}</p>
 				{% endif %}
+                {%  if not cafe.prices_set.first or not cafe.review_set.first %}
+                <div class="add-buttons">
+                    {% if not cafe.prices_set.first %}
+                        <a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
+                    {% endif %}
+                    {% if not cafe.review_set.first %}
+                        <a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
+                    {% endif %}
+                </div>
+                {%  endif %}
             </div>
-			{% if not cafe.prices_set.first %}	
-			<a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
-			{% endif %}
-			{% if not cafe.review_set.first %}
-			<a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
-			{% endif %}
         </div>
     {% endfor %}
     <div class="card page-width">

@@ -1,16 +1,24 @@
 {% load static %}
 
 <head>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'css/mogakco.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mogakco.css' %}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{%  static "js/mogakco.js" %}"></script>
-	{% block head %}
-	{% endblock %}
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
-	{% block content %}
-	{% endblock %}
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div class="background-container">
+    <div class="background-outside-margin">
+        <div class="background">
+        </div>
+    </div>
+</div>
 </body>
 

@@ -1,30 +1,31 @@
 h1 {
-	color: #FF8B00;
+	color: #FF711C;
 	font-size: 20px;
 }
 
 .info {
-	color: #666;
-	font-size: 18px;
-	font-weight: 700;
-    margin-top: 24px;
+	color: #888;
+	font-size: 16px;
+	font-weight: 500;
+    margin-top: 12px;
 }
 
 .info .label {
-	color: #222;
+	color: #444;
+	font-weight: 600;
     margin-right: 8px;
 }
 
 .temp-title {
-	color: #FF8B00;
-	font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 32px;
+	color: #FF711C;
+	font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 24px;
 }
 
 .card.search {
     margin-bottom: 32px;
-	width: 840px;
+	width: 720px;
 	text-align: left;
 }
 
@@ -32,32 +33,40 @@ h1 {
     overflow: hidden;
 	border: none;
     color: #000;
-	font-size: 28px;
+	font-size: 21px;
 	font-weight: 700;
-	margin: 48px 0 48px 56px;
-	display: inline;
+    width: 500px;
+	margin: 32px 0 32px 40px;
+	display: inline-block
 }
 
 .search-submit {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	float: right;
-	color: #FF8B00;
-	font-size: 28px;
+	color: #FF711C;
+	font-size: 21px;
 	font-weight: 700;
-	margin: 48px 56px 48px 0;
-	display: inline;
+	margin: 32px 40px 32px 0;
+	display: inline-block;
 }
 
-search-submit:hover {
+.search-submit:hover {
 	cursor: pointer;
 }
 
-button.add-info {
-	color: #FF8B00;
+div.add-buttons {
+	width: 100%;
 	text-align: right;
-	margin-top: 32px;
-	font-size: 28px;
+    margin-top: 32px;
+}
+
+a.add-info {
+	color: #FF711C;
+	text-decoration: none;
+	text-align: right;
+    margin-left: 32px;
+	font-size: 18px;
 	font-weight: 700;
 	display: inline;
 }

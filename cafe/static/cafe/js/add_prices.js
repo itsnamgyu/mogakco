@@ -1,5 +1,5 @@
 function validate_form() {
-    var form = document.forms["new_cafe"];
+    var form = document.forms["prices"];
     var americano = parseInt(form["americano"].value);
 
     if (!(0 < americano && americano < 20000)) {

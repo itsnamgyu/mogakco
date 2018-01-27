@@ -15,7 +15,7 @@ body {
 }
 
 .card:first-of-type {
-    margin-top: 112px;
+    margin-top: 212px;
 }
 
 .card:last-of-type {
@@ -24,7 +24,7 @@ body {
 
 .card-content {
 	text-align: left;
-	padding: 48px 56px;
+	padding: 36px 45px;
 }
 
 .card-button {
@@ -32,8 +32,8 @@ body {
 	display: block;
 	background-color: rgba(0,0,0,0);
 	border: none;
-	color: #FF8B00;
-	font-size: 24px;
+	color: #FF711C;
+	font-size: 18px;
 	font-weight: 700;
 	width: 100%;
 	padding: 32px 0px;
@@ -57,5 +57,26 @@ body {
 }
 
 .page-width {
-	width: 768px;
+	width: 560px;
+}
+
+div.background-container {
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	width: 100%;
+    height: 100%;
+	z-index: -1;
+}
+
+div.background-outside-margin {
+	margin-top: calc(100vh + 192px);
+}
+
+div.background {
+	margin-top: calc(200vh - 56.25vw);
+	width: 100%;
+    height: 56.25vw;
+	background: url("/static/img/background.png");
+	background-size: contain;
 }

@@ -1,5 +1,5 @@
 function validate_form() {
-    var form = document.forms["new_cafe"];
+    var form = document.forms["review"];
 
     if (form["plug"].value === "") {
         alert("Select plug status!");

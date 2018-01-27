@@ -1,5 +1,14 @@
 {% extends "global.html" %}
+{% load static %}
+
+{%  block head %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'main/css/index.css' %}" />
+{%  endblock %}
 
 {% block content %}
-<p>Ho!</p>
+    <div class="main-content">
+        <img class="main-logo" src="{% static 'img/mogakco-big.png' %}" />
+        <h1 class="main-subtitle">오직, 모여서 각자 코딩하기 위한 곳</h1>
+        <a class="main-begin" href="{% url 'cafe:index' %}">시작하기</a>
+    </div>
 {% endblock %}
