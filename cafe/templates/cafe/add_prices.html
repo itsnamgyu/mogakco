@@ -6,12 +6,12 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{ cafe.name }} 아메리카노 가격이 얼마인가요?</h1>
-<form name='prices' action="{% url 'cafe:submit_prices' cafe.pk %}" onsubmit="return validate_form()" method="POST">
-	{% csrf_token %}
-    <input type="text" name="americano" id="americano" autofocus/>
-    <label for="americano">아메리카노 가격</label>
-    <br/>
-	<input id="submit_button" type="submit" value="등록하기" />
-</form>
+    <h1>{{ cafe.name }} 아메리카노 가격이 얼마인가요?</h1>
+    <form name='prices' action="{% url 'cafe:submit_prices' cafe.pk %}" onsubmit="return validate_form()" method="POST">
+        {% csrf_token %}
+        <input type="text" name="americano" id="americano" autofocus/>
+        <label for="americano">아메리카노 가격</label>
+        <br/>
+        <input id="submit_button" type="submit" value="등록하기" />
+    </form>
 {% endblock %}

@@ -6,26 +6,26 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{ cafe.name }}리뷰를 달아주세요!</h1>
-<form name='review' action="{% url 'cafe:submit_review' cafe.pk %}" onsubmit="return validate_form()" method="POST">
-	{% csrf_token %}
-    <input type="text" name="comment" id="name" autofocus/>
-    <label for="comment">리뷰</label>
-    <br/>
-    <input type="radio" name="plug" id="plug0" value="0"/>
-    <label for="plug0">전기 코드 없음</label>
-    <input type="radio" name="plug" id="plug1" value="1"/>
-    <label for="plug1">전기 코드 조금 있음</label>
-    <input type="radio" name="plug" id="plug2" value="2"/>
-    <label for="plug2">전기 코드 많음</label>
-    <br/>
-    <input type="radio" name="wifi" id="wifi0" value="0"/>
-    <label for="wifi0">와이파이 별로</label>
-    <input type="radio" name="wifi" id="wifi1" value="1"/>
-    <label for="wifi1">와이파이 쓸만함</label>
-    <input type="radio" name="wifi" id="wifi2" value="2"/>
-    <label for="wifi2">와이파이 좋음</label>
-    <br/>
-	<input id="submit_button" type="submit" value="등록하기" />
-</form>
+    <h1>{{ cafe.name }}리뷰를 달아주세요!</h1>
+    <form name='review' action="{% url 'cafe:submit_review' cafe.pk %}" onsubmit="return validate_form()" method="POST">
+        {% csrf_token %}
+        <input type="text" name="comment" id="name" autofocus/>
+        <label for="comment">리뷰</label>
+        <br/>
+        <input type="radio" name="plug" id="plug0" value="0"/>
+        <label for="plug0">전기 코드 없음</label>
+        <input type="radio" name="plug" id="plug1" value="1"/>
+        <label for="plug1">전기 코드 조금 있음</label>
+        <input type="radio" name="plug" id="plug2" value="2"/>
+        <label for="plug2">전기 코드 많음</label>
+        <br/>
+        <input type="radio" name="wifi" id="wifi0" value="0"/>
+        <label for="wifi0">와이파이 별로</label>
+        <input type="radio" name="wifi" id="wifi1" value="1"/>
+        <label for="wifi1">와이파이 쓸만함</label>
+        <input type="radio" name="wifi" id="wifi2" value="2"/>
+        <label for="wifi2">와이파이 좋음</label>
+        <br/>
+        <input id="submit_button" type="submit" value="등록하기" />
+    </form>
 {% endblock %}

@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<h1>새로운 카페를 등록하세요!</h1>
-<form name='new_cafe' action="{% url 'cafe:submit_cafe' %}" onsubmit="return validate_form()" method="POST">
-	{% csrf_token %}
-	<input type="text" name="name" id="name" autofocus />
-    <label for="name">카페 이름</label>
-    <br/>
-    <input type="text" name="address" id="address"/>
-    <label for="address">주소</label>
-    <br/>
-	<input id="submit_button" type="submit" value="등록하기" />
-</form>
+    <h1>새로운 카페를 등록하세요!</h1>
+    <form name='new_cafe' action="{% url 'cafe:submit_cafe' %}" onsubmit="return validate_form()" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" id="name" autofocus />
+        <label for="name">카페 이름</label>
+        <br/>
+        <input type="text" name="address" id="address"/>
+        <label for="address">주소</label>
+        <br/>
+        <input id="submit_button" type="submit" value="등록하기" />
+    </form>
 {% endblock %}
