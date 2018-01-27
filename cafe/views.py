@@ -7,7 +7,7 @@ from django.db.models import Q
 from cafe.models import Cafe
 
 
-def list(request):
+def index(request):
     if 'search_string' in request.GET:
         search_string = request.GET['search_string']
         if search_string == "":
@@ -24,7 +24,7 @@ def list(request):
         search_string = ""
         cafes = Cafe.objects.all()
 
-    return render(request, "cafe/list.html", {'cafes': cafes, 'search_string': search_string})
+    return render(request, "cafe/index.html", {'cafes': cafes, 'search_string': search_string})
 
 
 def create(request):
