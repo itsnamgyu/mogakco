@@ -27,7 +27,6 @@ def list(request):
     return render(request, "cafe/list.html", {'cafes': cafes, 'search_string': search_string})
 
 
-
 def create(request):
     return render(request, "cafe/create.html")
 
@@ -63,7 +62,7 @@ def submit_review(request, cafe_pk):
         cafe = Cafe.objects.get(pk=cafe_pk)
         cafe.review_set.create(
                 plug=request.POST['plug'], wifi=request.POST['wifi'],
-                comment=None)
+                comment=comment)
     except (Cafe.DoesNotExist, KeyError):
         print("Received an invalid cafe create form")
     else:
