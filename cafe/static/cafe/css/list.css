@@ -16,6 +16,14 @@ h1 {
     margin-right: 8px;
 }
 
+.info.review {
+	margin-top: 24px;
+}
+
+.info.review + .info.review {
+	margin-top: 12px;
+}
+
 .temp-title {
 	color: #FF711C;
 	font-size: 21px;
@@ -58,7 +66,7 @@ h1 {
 div.add-buttons {
 	width: 100%;
 	text-align: right;
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 a.add-info {
@@ -66,7 +74,7 @@ a.add-info {
 	text-decoration: none;
 	text-align: right;
     margin-left: 32px;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 	display: inline;
 }

@@ -28,16 +28,17 @@
                     <p class="info"><span class="label">전기 코드</span>{{ cafe.review_set.first.plug_string }}</p>
                     <p class="info"><span class="label">와이파이</span>{{ cafe.review_set.first.wifi_string }}</p>
                 {% endif %}
-                {%  if not cafe.prices_set.first or not cafe.review_set.first %}
-                    <div class="add-buttons">
-                        {% if not cafe.prices_set.first %}
-                            <a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
-                        {% endif %}
-                        {% if not cafe.review_set.first %}
-                            <a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
-                        {% endif %}
-                    </div>
-                {%  endif %}
+                {% for review in cafe.review_set.all %}
+                    {% if review.comment %}
+                        <p class="info review"><span class="label">리뷰 {{ forloop.counter }}</span>{{  review.comment }}</p>
+                    {% endif %}
+                {% endfor %}
+                <div class="add-buttons">
+                    {% if not cafe.prices_set.first %}
+                        <a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
+                    {% endif %}
+                    <a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
+                </div>
             </div>
         </div>
     {% endfor %}
