@@ -2,16 +2,21 @@
 {% load static %}
 
 {% block head %}
+    <link type="text/css" rel="stylesheet" href="{%  static 'cafe/css/form.css' %}" />
     <script src="{%  static 'cafe/js/add_prices.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    <h1>{{ cafe.name }} 아메리카노 가격이 얼마인가요?</h1>
-    <form name='prices' action="{% url 'cafe:submit_prices' cafe.pk %}" onsubmit="return validate_form()" method="POST">
-        {% csrf_token %}
-        <input type="text" name="americano" id="americano" autofocus/>
-        <label for="americano">아메리카노 가격</label>
-        <br/>
-        <input id="submit_button" type="submit" value="등록하기" />
-    </form>
+    <div class="card page-width">
+        <div class="card-content form">
+            <h1>{{ cafe.name }} 아메리카노 가격이 얼마인가요?</h1>
+            <form name='prices' action="{% url 'cafe:submit_prices' cafe.pk %}" onsubmit="return validate_form()" method="POST">
+                {% csrf_token %}
+                <input type="text" name="americano" id="americano" autofocus/>
+                <label for="americano">아메리카노 가격</label>
+                <br/>
+                <input id="submit_button" type="submit" value="등록하기" />
+            </form>
+        </div>
+    </div>
 {% endblock %}
