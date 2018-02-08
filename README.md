@@ -3,11 +3,32 @@ A service to help hip-happenin' developers find cafes with good wifi and power p
 
 ![DONT LIE TO ME](https://media1.tenor.com/images/98753515461c9cec721477bca6e7131d/tenor.gif?itemid=7875134)
 
-# Project Info
+# Installation
+
+## Pre-requisites
+
+Python3 and stuff in requirements.txt
+
+### Python venv part (not required)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Using requirements.txt
+```bash
+pip3 install -r requirements.txt
+```
 
 ## Deployment
 
-Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/django-two) for a full Ubuntu AWS setup walkthrough.
+Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/django-two) for a full Ubuntu AWS setup walkthrough. Why? Because I didn't look at the [deployment tutorial](https://docs.djangoproject.com/en/2.0/howto/deployment/) yet.
+
+```bash
+python3 manage.py runserver
+```
+
+# Contribution
 
 ## Project Structure
 
@@ -23,14 +44,30 @@ Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/182
 
 Follow the pep8 coding guide (no-brainer for Python). Try to check your code with flake8 before committing. It's included in requirements.txt! Just do
 
-```
+```bash
 flake8 ho.py
 ```
 
-# Behind Story
+# License
 
-Used to be a team project for Naver D2 Fest 2018, but didn't work out :(
+MIT License
 
-Decided to make this my mildly-cool website project for [learning Django](https://github.com/itsnamgyu/django-two/projects/1?)
+Copyright (c) 2018 Mogak Co. Ltd.
 
-It's actually quite cool _IMO_
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
