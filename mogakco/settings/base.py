@@ -11,21 +11,22 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-if 'MOGAKCO_KEY' in os.environ:
-    SECRET_KEY = os.environ['MOGAKCO_KEY']
+secret_path = os.path.join(BASE_DIR, "secret.txt")
+if os.path.isfile(secret_path):
+    with open(secret_path, 'r') as f:
+        SECRET_KEY = f.read().strip(" \n")
 else:
-    raise Exception("Make sure to set MOGAKCO_KEY environment variable to" +
-                    "the SECRET_KEY of this Django project. Contact" +
-                    "itsnamgyu@gmail.com for the correct key")
+    raise ImproperlyConfigured("Make sure to put secret.txt in BASE_DIR")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,5 +128,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 ]
+
+# Modular setting files: put a symlink to local_settings.py
+try:
+    from . import local_settings
+except ImportError:
+    pass
+
