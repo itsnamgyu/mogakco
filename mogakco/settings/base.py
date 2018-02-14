@@ -133,7 +133,7 @@ STATICFILES_DIRS = [
 
 # Modular setting files: put a symlink to local_settings.py
 try:
-    from . import local_settings
+    from . import local
 except ImportError:
     pass
 
