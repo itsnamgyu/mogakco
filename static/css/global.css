@@ -82,10 +82,4 @@ body {
 }
 
 div.footer {
-	position: fixed;
-	width: 100%;
-	text-align: center;
-	bottom: 8px;
-	font-size: 12px;
-    font-weight: 200;
 }
