@@ -11,7 +11,7 @@ A service to help hip-happenin' developers find cafes with good wifi and power p
 
 Python3 and stuff in requirements.txt
 
-### Python venv part (not required)
+### Python venv Part (not required)
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -26,13 +26,13 @@ pip3 install -r requirements.txt
 ## Deployment
 
 ### For Development
-For a simple development deployment using `runserver` do this.
+For a simple development deployment using `runserver`, do this.
 
 ```bash
 python3 manage.py runserver
 ```
 
-For more info, look at [this](https://github.com/itsnamgyu/django-two/wiki/Deployment-on-AWS-Part-1)
+For more info, look at [this](https://github.com/itsnamgyu/django-two/wiki/Deployment-on-AWS-Part-1).
 
 ### For Production
 
@@ -55,7 +55,7 @@ Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/182
 
 ## Coding Convensions
 
-Follow the pep8 coding guide (no-brainer for Python). Try to check your code with flake8 before committing. It's included in requirements.txt! Just do
+Follow the pep8 coding guide (no-brainer for Python). Try to check your code with flake8 before committing. It's included in requirements.txt! Just do this.
 
 ```bash
 flake8 ho.py
