@@ -1,4 +1,4 @@
-{% extends "global.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {%  block head %}
@@ -6,10 +6,14 @@
 {%  endblock %}
 
 {% block content %}
-    <div class="main-content">
-        <img class="main-logo" src="{% static 'img/mogakco-big.png' %}" />
-        <h1 class="main-subtitle">오직, 모여서 각자 코딩하기 위한 곳</h1>
-        <a class="main-begin" href="{% url 'cafe:index' %}">시작하기</a>
+    <div class="hero container">
+        <div class="hero row align-items-center">
+            <div class="hero col-10">
+                <img class="hero-logo" src="{% static 'img/mogakco-big.png' %}" />
+                <h1 class="hero-copy">오직, 모여서 각자 코딩하기 위한 곳</h1>
+                <a class="hero-startButton" href="{% url 'cafe:index' %}">시작하기</a>
+            </div>
+        </div>
     </div>
     <div class="footer">Copyright © 2018 Mogak Co. Ltd. All rights reserved.</div>
 {% endblock %}

@@ -60,7 +60,7 @@ body {
 	width: 560px;
 }
 
-div.background-container {
+.background-container--innerMargin {
 	position: fixed;
 	top: -100vh;
 	left: 0;
@@ -69,11 +69,11 @@ div.background-container {
 	z-index: -1;
 }
 
-div.background-outside-margin {
+.background-container--outerMargin {
 	margin-top: calc(100vh + 192px);
 }
 
-div.background {
+.background-image {
 	margin-top: calc(200vh - 56.25vw);
 	width: 100%;
     height: 56.25vw;
