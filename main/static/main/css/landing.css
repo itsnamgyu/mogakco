@@ -24,10 +24,10 @@ body {
 }
 
 .hero-startButton {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 900;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 20px;
     color: #FF711C;
     background-color: #eee;
     text-decoration: none;
@@ -67,9 +67,9 @@ body {
 
     .hero-startButton {
         font-size: 18px;
-        width: 288px;
+        width: 360px;
         margin-top: 32px;
-        padding: 24px 0;
+        padding: 20px 0;
     }
 }
 
