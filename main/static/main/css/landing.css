@@ -6,8 +6,9 @@ body {
     background: url("/static/img/background-black.png");
     background-size: contain;
 }
+
 .hero.row {
-    height: 90vh;
+    height: 85vh;
     flex-direction: row;
     justify-content: center;
 }
@@ -56,6 +57,10 @@ body {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .hero.row {
+        height: 90vh;
+    }
+
     .hero-logo {
         width: 248px;
     }
