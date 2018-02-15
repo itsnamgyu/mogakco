@@ -3,6 +3,8 @@ A service to help hip-happenin' developers find cafes with good wifi and power p
 
 ![DONT LIE TO ME](https://media1.tenor.com/images/98753515461c9cec721477bca6e7131d/tenor.gif?itemid=7875134)
 
+
+
 # Installation
 
 ## Pre-requisites
@@ -20,13 +22,23 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
+
 ## Deployment
 
-Currently we just use runserver. Look at [this](https://github.com/itsnamgyu/django-two) for a full Ubuntu AWS setup walkthrough. Why? Because I didn't look at the [deployment tutorial](https://docs.djangoproject.com/en/2.0/howto/deployment/) yet.
+### For Development
+For a simple development deployment using `runserver` do this.
 
 ```bash
 python3 manage.py runserver
 ```
+
+For more info, look at [this](https://github.com/itsnamgyu/django-two/wiki/Deployment-on-AWS-Part-1)
+
+### For Production
+
+For production deployment using Apache and WSGI, look at [this](https://github.com/itsnamgyu/django-two/wiki/Deployment-on-AWS-Part-2) for Ubuntu 16.04 running on AWS EC2.
+
+
 
 # Contribution
 
@@ -40,6 +52,7 @@ Lets try to use common sense and group things into apps based on the models they
 
 Thanks to [J. C. Leitão@StackOverlflow](https://stackoverflow.com/questions/18270898/django-best-practice-for-splitting-up-project-into-apps)
 
+
 ## Coding Convensions
 
 Follow the pep8 coding guide (no-brainer for Python). Try to check your code with flake8 before committing. It's included in requirements.txt! Just do
@@ -47,6 +60,8 @@ Follow the pep8 coding guide (no-brainer for Python). Try to check your code wit
 ```bash
 flake8 ho.py
 ```
+
+
 
 # License
 
