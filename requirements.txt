@@ -1,2 +1,2 @@
-Django>=2
+django
 flake8
