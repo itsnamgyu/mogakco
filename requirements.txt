@@ -1,2 +1,2 @@
-django>=2.0.11
+django~=2.0
 flake8
